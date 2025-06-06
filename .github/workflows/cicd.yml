@@ -31,7 +31,7 @@ jobs:
 
     - name: Copy build files to EC2
       run: |
-        scp -r ./dist/* uubuntu@${{ secrets.EC2_HOST }}:/var/www/html/
+        scp -r ./dist/* ubuntu@${{ secrets.EC2_HOST }}:/var/www/html/
       env:
         SSH_AUTH_SOCK: ${{ env.SSH_AUTH_SOCK }}
 
