@@ -31,12 +31,12 @@ jobs:
 
     - name: Copy build files to EC2
       run: |
-        scp -r ./dist/* ubuntu@<EC2_IP_ADDRESS>:/var/www/html/
+        scp -r ./dist/* uubuntu@${{ secrets.EC2_HOST }}:/var/www/html/
       env:
         SSH_AUTH_SOCK: ${{ env.SSH_AUTH_SOCK }}
 
     - name: Restart nginx on EC2
       run: |
-        ssh ubuntu@<EC2_IP_ADDRESS> 'sudo systemctl restart nginx'
+        ssh ubuntu@${{ secrets.EC2_HOST }} 'sudo systemctl restart nginx'
       env:
         SSH_AUTH_SOCK: ${{ env.SSH_AUTH_SOCK }}
