@@ -4,7 +4,7 @@ import React from 'react'
 function App() {
   return (
     <div>
-      <h1>Hello Vite + React!</h1>
+      <h1>אתר לדוגמה</h1>
     </div>
   )
 }
